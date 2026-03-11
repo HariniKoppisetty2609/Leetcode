@@ -1,0 +1,24 @@
+//1295. Find Numbers with Even Number of Digit
+
+class Solution {
+    public int findNumbers(int[] nums) {
+        int count = 0;
+        int count1 = 0;
+
+        for(int i = 0; i < nums.length; i++){
+            int num = nums[i];
+
+            while(num > 0){
+                int temp = num%10;
+                count++;
+                num = num/10;
+            }
+
+            if(count%2==0){
+                count1++;
+            }
+            count = 0;
+        }
+        return count1++;
+    }
+}
