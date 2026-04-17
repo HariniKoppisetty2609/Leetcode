@@ -1,0 +1,29 @@
+
+//1679. Max Number of k-sum
+class Solution {
+    public int maxOperations(int[] nums, int k) {
+        int count = 0;
+        Arrays.sort(nums);
+        int n =nums.length;
+        int l = 0;
+        int r = n-1;
+
+        while(l < r){
+            if(nums[l] + nums[r] == k){
+                count++;
+                l++;
+                r--;
+            }
+            else if(nums[l] + nums[r] > k){
+                r--;
+            }
+            else if(nums[l] + nums[r] < k){
+                l++;
+            }
+            
+        }
+
+     return count;   
+       
+    }
+}
